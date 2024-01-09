@@ -3,11 +3,16 @@ session_start();
 
 include 'config.php';
 
+if (isset($_SESSION['user'])) {
+    header('Location: index.php');
+    exit();
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username = chef AND password = chef");
     $stmt->bind_param("ss", $username, $password);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
@@ -45,6 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <button type="submit">Login</button>
         </form>
+
+        <a href="index.php" class="back-link">Terug naar de Homepagina</a>
     </div>
 </body>
 </html>

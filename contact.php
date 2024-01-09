@@ -1,18 +1,14 @@
-<?php
-include 'config.php';
-?>
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Kamadoing</title>
+    <title>Contact</title>
 </head>
 <body>
     <header>
-        <h1>BKamadoing</h1>
+        <h1>Kamadoing</h1>
         <nav>
             <a href="index.php">Home</a>
             <?php
@@ -28,7 +24,9 @@ include 'config.php';
     </header>
 
     <div class="content">
-        <!-- Inhoud van de homepage -->
+        <h2>Contact</h2>
+        <p>Heb je vragen, opmerkingen of feedback? Neem gerust contact met ons op.</p>
+        <!-- Voeg hier het contactformulier of verdere inhoud toe -->
     </div>
 
     <?php
