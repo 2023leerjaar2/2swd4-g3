@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="login-container">
         <h2>Login</h2>
         <?php if (isset($error)) { ?>
-            <p><?php echo $error; ?></p>
+            <p><?php echo $error; ?></p>s
         <?php } ?>
         <form method="post">
             <label for="username">Gebruikersnaam:</label>
@@ -51,7 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Login</button>
         </form>
 
-        <a href="index.php" class="back-link">Terug naar de Homepagina</a>
+        <a href="index.php" class="back-link">Terug naar de homepage</a>
+
+        <a href="registratie.php" class="create-account-link">Account aanmaken</a>
     </div>
 </body>
 </html>

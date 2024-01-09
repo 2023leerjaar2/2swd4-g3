@@ -51,6 +51,8 @@ header nav a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* inlogpagina */
+
 .login-container {
     max-width: 400px;
     margin: 100px auto;
@@ -107,5 +109,17 @@ button:hover {
 }
 
 .back-link:hover {
+    text-decoration: underline;
+}
+
+.create-account-link {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+.create-account-link:hover {
     text-decoration: underline;
 }
