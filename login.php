@@ -3,6 +3,7 @@ session_start();
 
 include 'config.php';
 
+// Controleer of de gebruiker al is ingelogd, stuur deze dan door naar de homepagina
 if (isset($_SESSION['user'])) {
     header('Location: index.php');
     exit();
@@ -12,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = chef AND password = chef");
+    $stmt = $conn->prepare("SELECT * FROM gebruikers WHERE gebruikersnaam = ? AND wachtwoord = ?");
     $stmt->bind_param("ss", $username, $password);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
@@ -39,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="login-container">
         <h2>Login</h2>
         <?php if (isset($error)) { ?>
-            <p><?php echo $error; ?></p>s
+            <p><?php echo $error; ?></p>
         <?php } ?>
         <form method="post">
             <label for="username">Gebruikersnaam:</label>
@@ -51,8 +52,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Login</button>
         </form>
 
+        <!-- Terugknop naar de homepage -->
         <a href="index.php" class="back-link">Terug naar de homepage</a>
 
+        <!-- Nieuwe knop voor het aanmaken van een account -->
         <a href="registratie.php" class="create-account-link">Account aanmaken</a>
     </div>
 </body>
