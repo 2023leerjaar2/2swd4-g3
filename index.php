@@ -34,5 +34,11 @@ include 'config.php';
     <?php
     // Hier kun je de footer toevoegen
     ?>
+    <?php
+// Voeg dit toe boven de header tag in index.php
+echo "Gebruikersnaam in de sessie: " . $_SESSION['user'];
+
+// Rest van de code
+?>
 </body>
 </html>
