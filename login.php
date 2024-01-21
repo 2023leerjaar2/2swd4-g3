@@ -35,6 +35,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Login</title>
 </head>
 <body>
+<header>
+        <h1>Kamadoing</h1>
+        <nav>
+            <a href="index.php">Home</a>
+            <?php
+            if (isset($_SESSION['user'])) {
+                echo '<a href="recept_toevoegen.php">Recept Toevoegen</a>';
+                echo '<a href="logout.php">Uitloggen</a>';
+            } else {
+                echo '<a href="login.php">Login</a>';
+            }
+            ?>
+            <a href="contact.php">Contact</a>
+        </nav>
+    </header>
     <div class="login-container">
         <h2>Login</h2>
         <?php if (isset($error)) { ?>
