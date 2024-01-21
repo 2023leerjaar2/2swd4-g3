@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 include 'config.php';
 
@@ -25,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="nl">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,9 +32,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Recept Toevoegen</title>
 </head>
 <body>
-    <header>
-        <h1>BBQ Recepten</h1>
-        <span>Welkom, <?php echo $_SESSION['user']; ?>! <a href="logout.php">Uitloggen</a></span>
+<header>
+        
+        <nav>
+            <img class="logo" src="https://cdn.discordapp.com/attachments/581190740479311893/1198765338460962836/Asset_2.png?ex=65c01838&is=65ada338&hm=b3b142e452fc2c2b58df27d2a781bf6303e7911b8abaa6c58603a73084cbd125&" alt="">
+            <div>
+            <a href="index.php">Home</a>
+            <?php
+            if (isset($_SESSION['user'])) {
+                echo '<a href="recept_toevoegen.php">Recept Toevoegen</a>';
+                echo '<a href="logout.php">Uitloggen</a>';
+            } else {
+                echo '<a href="login.php">Login</a>';
+            }
+            ?>
+            <a href="contact.php">Contact</a>
+            </div>
+        </nav>
     </header>
 
     <div class="content">
