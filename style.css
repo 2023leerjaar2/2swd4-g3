@@ -83,7 +83,7 @@ textarea {
     border-radius: 3px;
 }
 
-button {
+.button {
     width: 12vw;
     padding: 10px;
     background-color: #333;
@@ -140,5 +140,8 @@ button:hover {
     height: 50px;
 }
 .recept{
+    height: 200px;
+}
+#bericht{
     height: 200px;
 }

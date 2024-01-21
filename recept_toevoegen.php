@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="text" name="foto" required>
             <br>
 
-            <button type="submit">Toevoegen</button>
+            <button class="button" type="submit">Toevoegen</button>
         </form>
     </div>
 

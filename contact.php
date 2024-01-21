@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="bericht">Bericht:</label>
             <textarea id="bericht" name="bericht" required></textarea>
 
-            <input type="submit" value="Verstuur">
+            <input class="button" type="submit" value="Verstuur">
         </form>
     </div>
 

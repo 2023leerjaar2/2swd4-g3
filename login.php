@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="login-container">
         <h2>Login</h2>
+        <br>
         <?php if (isset($error)) { ?>
             <p><?php echo $error; ?></p>
         <?php } ?>
@@ -47,7 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="password">Wachtwoord:</label>
             <input type="password" name="password" required>
 
-            <button type="submit">Login</button>
+            <button class="button" type="submit">Login</button>
+            <br>
         </form>
 
         <!-- Terugknop naar de homepage -->
