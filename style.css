@@ -6,7 +6,8 @@ body, h1, h2, p, form {
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: rgb(255, 215, 85);
+    background-color: rgb(34, 34, 34);
+    
 }
 
 header {
@@ -14,6 +15,8 @@ header {
     color: white;
     padding: 10px;
     text-align: center;
+    box-shadow: 0 0 25px 5px #d4af37;
+    margin-bottom: 5rem;
 }
 
 header a {
@@ -44,12 +47,12 @@ header nav a:hover {
 /* indexpagina */
 
 .content {
-    max-width: 800px;
+    max-width: 60vw;
     margin: 20px auto;
     background-color: white;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    box-shadow: 0 0 25px 5px #d4af37;
 }
 
 /* inlogpagina */
@@ -81,11 +84,12 @@ textarea {
 }
 
 button {
+    width: 12vw;
     padding: 10px;
     background-color: #333;
     color: white;
     border: none;
-    border-radius: 3px;
+    border-radius: 50px;
     cursor: pointer;
 }
 
@@ -131,4 +135,10 @@ button:hover {
 }
 .logo{
     height: 80px;
+}
+.tekst{
+    height: 50px;
+}
+.recept{
+    height: 200px;
 }

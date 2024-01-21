@@ -53,18 +53,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="content">
         <h2>Recept Toevoegen</h2>
+        <br>
         <form method="post">
             <label for="titel">Titel:</label>
             <input type="text" name="titel" required>
 
             <label for="tekst">Tekst:</label>
-            <textarea name="tekst" required></textarea>
+            <textarea class="tekst" name="tekst" required></textarea>
 
             <label for="recept">Recept:</label>
-            <textarea name="recept" required></textarea>
+            <textarea class="recept" name="recept" required></textarea>
 
             <label for="foto">Foto (URL):</label>
             <input type="text" name="foto" required>
+            <br>
 
             <button type="submit">Toevoegen</button>
         </form>

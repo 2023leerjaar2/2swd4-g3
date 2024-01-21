@@ -10,7 +10,10 @@ include 'config.php';
     <link rel="stylesheet" href="style.css">
     <title>BBQ Recepten</title>
 </head>
+
 <body>
+
+    
     <header>
         
         <nav>
