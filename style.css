@@ -123,3 +123,8 @@ button:hover {
 .create-account-link:hover {
     text-decoration: underline;
 }
+.successvol-bericht {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+}
