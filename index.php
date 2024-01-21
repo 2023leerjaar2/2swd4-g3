@@ -31,14 +31,14 @@ include 'config.php';
         <!-- Inhoud van de homepage -->
     </div>
 
-    <?php
-    // Hier kun je de footer toevoegen
-    ?>
-    <?php
-// Voeg dit toe boven de header tag in index.php
-echo "Gebruikersnaam in de sessie: " . $_SESSION['user'];
-
-// Rest van de code
-?>
+    <footer>
+        <p>Ingelogd als: <?php echo $_SESSION['user']; ?></p>
+        <div class="social-icons">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <p>&copy; <?php echo date("Y"); ?> Kamadoing. Alle rechten voorbehouden.</p>
+    </footer>
 </body>
 </html>
