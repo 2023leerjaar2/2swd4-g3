@@ -25,6 +25,8 @@ include 'config.php';
                 echo '<a href="login.php">Login</a>';
             }
             ?>
+            <a href="recepten.php">Recepten</a>
+            <a href="boeken.php">Boeken</a>
             <a href="contact.php">Contact</a>
             </div>
         </nav>
@@ -86,12 +88,18 @@ include 'config.php';
     }
 </script>
 </section>
-    <footer>
-        <p>Ingelogd als: <?php echo $_SESSION['user']; ?></p>
+<footer>
+        <p><?php 
+            if (!empty($_SESSION['user'])) {
+                echo "Ingelogd als: {$_SESSION['user']}";
+            } else {
+                echo "Niet ingelogd";
+            }
+            ?> </p>
         <div class="social-icons">
-            <a href="#"><img class="icon" src="img/facebook-icon.png" alt="Facebook"></a>
-            <a href="#"><img class="icon" src="img/twitter-icon.png" alt="Twitter"></a>
-            <a href="#"><img class="icon" src="img/instagram-icon.png" alt="Instagram"></a>
+            <a href="#"><img src="img/facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="img/twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="img/instagram-icon.png" alt="Instagram"></a>
         </div>
         <p>&copy; <?php echo date("Y"); ?> Kamadoing. Alle rechten voorbehouden.</p>
     </footer>

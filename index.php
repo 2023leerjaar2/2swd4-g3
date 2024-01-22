@@ -27,6 +27,8 @@ include 'config.php';
                 echo '<a href="login.php">Login</a>';
             }
             ?>
+            <a href="recepten.php">Recepten</a>
+            <a href="boeken.php">Boeken</a>
             <a href="contact.php">Contact</a>
             </div>
         </nav>
@@ -38,23 +40,19 @@ include 'config.php';
     </div>
     <div class="content" id="content1">
         <?php
-        // Query om alle recepten op te halen
         $query = "SELECT * FROM recepten LIMIT 2";
         $result = mysqli_query($conn, $query);
 
-        // Controleer of er resultaten zijn
         if (mysqli_num_rows($result) > 0) {
-            // Loop door de resultaten en toon ze op de pagina
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<div class="recept">';
                 echo '<h2>' . $row['titel'] . '</h2>';
-                echo '<p>' . $row['tekst'] . '</p>';
+                echo '<p>', 'Bereiding', '<br><br>' . $row['tekst'] . '</p>';
                 
                 if (!empty($row['foto'])) {
                     echo '<img src="' . $row['foto'] . '" alt="Receptfoto">';
                 }
-                echo '<p>' . $row['recept'] . '</p>';
-                // Controleer of er een foto is en toon deze indien beschikbaar
+                echo '<p>', 'ingredïenten', '<br><br>' . $row['recept'] . '</p>';
                 
                 echo '</div>';
             }
@@ -62,10 +60,35 @@ include 'config.php';
             echo '<p>Geen recepten gevonden.</p>';
         }
 
-        // Sluit de databaseverbinding
         mysqli_close($conn);
         ?>
     </div>
+    
+<div class="chef-info">
+    <div class="chef-image">
+        <img src="img/boukhiour.jpg" alt="Mohammed Boukiour">
+    </div>
+    <div class="chef-details">
+        <h3>Mohammed Boukiour</h3>
+        <p>Maak kennis met onze gepassioneerde barbecuespecialist, 
+            Mohammed Boukiour. Met zijn jarenlange ervaring en 
+            toewijding aan de kunst van het grillen, brengt Mohammed 
+            niet alleen smaak naar de barbecue, maar ook een verhaal.</p>
+        <p>Op 40-jarige leeftijd is Mohammed gevestigd in het bruisende 
+            Amsterdam, Nederland. Zijn liefde voor barbecuen gaat verder 
+            dan alleen de grill - het is een manier van leven.</p>
+        <p>Naast het creëren van smaakvolle gerechten, geniet Mohammed 
+            van tuinieren en reizen. Deze veelzijdige chef deelt niet 
+            alleen recepten, maar ook zijn enthousiasme voor het 
+            buitenleven en de wereldkeuken.</p>
+        <p>Ontdek de geheimen van zijn smaakvolle gerechten en laat 
+            je inspireren door de verhalen achter zijn kookavonturen. 
+            Mohammed's kookboeken bieden een uitnodiging om je eigen 
+            culinaire reis te beginnen.</p>
+        <a href="boeken.php" class="button">Bekijk de kookboeken</a>
+    </div>
+</div>
+
     <footer>
         <p><?php 
             if (!empty($_SESSION['user'])) {

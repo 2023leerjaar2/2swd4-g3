@@ -55,6 +55,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo '<a href="login.php">Login</a>';
             }
             ?>
+            <a href="recepten.php">Recepten</a>
+            <a href="boeken.php">Boeken</a>
             <a href="contact.php">Contact</a>
             </div>
         </nav>
@@ -78,9 +80,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
 
-    <?php
-    
-    ?>
+    <footer>
+        <p><?php 
+            if (!empty($_SESSION['user'])) {
+                echo "Ingelogd als: {$_SESSION['user']}";
+            } else {
+                echo "Niet ingelogd";
+            }
+            ?> </p>
+        <div class="social-icons">
+            <a href="#"><img src="img/facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="img/twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="img/instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <p>&copy; <?php echo date("Y"); ?> Kamadoing. Alle rechten voorbehouden.</p>
+    </footer>
 </body>
 </html>
 <?php

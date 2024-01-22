@@ -49,6 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo '<a href="login.php">Login</a>';
             }
             ?>
+            <a href="recepten.php">Recepten</a>
+            <a href="boeken.php">Boeken</a>
             <a href="contact.php">Contact</a>
             </div>
         </nav>
@@ -70,10 +72,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <br>
         </form>
 
-        <!-- Terugknop naar de homepage -->
         <a href="index.php" class="back-link">Terug naar de homepage</a>
 
-        <!-- Nieuwe knop voor het aanmaken van een account -->
         <a href="registratie.php" class="create-account-link">Account aanmaken</a>
     </div>
 </body>

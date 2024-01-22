@@ -1,39 +1,18 @@
 <?php
-session_start();
 include 'config.php';
-
-if (!isset($_SESSION['user']) || ($_SESSION['user'] != 'chef' && $_SESSION['user'] != 'admin')) {
-    header('Location: login.php');
-    exit();
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $titel = $_POST['titel'];
-    $tekst = $_POST['tekst'];
-    $recept = $_POST['recept'];
-    $foto = $_POST['foto'];
-
-    $stmt = $conn->prepare("INSERT INTO recepten (titel, tekst, recept, foto) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $titel, $tekst, $recept, $foto);
-    $stmt->execute();
-    $stmt->close();
-
-    header('Location: index.php');
-    exit();
-}
 ?>
+
 <!DOCTYPE html>
 <html lang="nl">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Recept Toevoegen</title>
+    <title>BBQ Recepten</title>
 </head>
+
 <body>
-<header>
-        
+    <header>
         <nav>
             <img class="logo" src="https://cdn.discordapp.com/attachments/581190740479311893/1198765338460962836/Asset_2.png?ex=65c01838&is=65ada338&hm=b3b142e452fc2c2b58df27d2a781bf6303e7911b8abaa6c58603a73084cbd125&" alt="">
             <div>
@@ -52,26 +31,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </nav>
     </header>
+    <div class="paginatitel">
+            <p>
+                Al Onze Recepten
+            </p>
+    </div>
+    <div class="content" id="content2">
+        <?php
+        $query = "SELECT * FROM recepten";
+        $result = mysqli_query($conn, $query);
 
-    <div class="content">
-        <h2>Recept Toevoegen</h2>
-        <br>
-        <form method="post">
-            <label for="titel">Titel:</label>
-            <input type="text" name="titel" required>
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '<div class="recept3">';
+                echo '<h2>' . $row['titel'] . '</h2>';
+                echo '<p>', 'Bereiding', '<br><br>' . $row['tekst'] . '</p>';
+                
+                if (!empty($row['foto'])) {
+                    echo '<img src="' . $row['foto'] . '" alt="Receptfoto">';
+                }
+                echo '<p>', 'ingredïenten', '<br><br>' . $row['recept'] . '</p>';
+                
+                echo '</div>';
+            }
+        } else {
+            echo '<p>Geen recepten gevonden.</p>';
+        }
 
-            <label for="tekst">Tekst:</label>
-            <textarea class="tekst" name="tekst" required></textarea>
-
-            <label for="recept">Recept:</label>
-            <textarea id="recept" name="recept" required></textarea>
-
-            <label for="foto">Foto (URL):</label>
-            <input type="text" name="foto" required>
-            <br>
-
-            <button class="button" type="submit">Toevoegen</button>
-        </form>
+        mysqli_close($conn);
+        ?>
     </div>
 
     <footer>
@@ -89,5 +77,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <p>&copy; <?php echo date("Y"); ?> Kamadoing. Alle rechten voorbehouden.</p>
     </footer>
-</body>
+        
+    </body>
 </html>
