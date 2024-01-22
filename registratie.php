@@ -51,6 +51,26 @@ if (isset($_SESSION['user'])) {
     <title>Account Aanmaken</title>
 </head>
 <body>
+<header>
+        <nav>
+            <a class="logolink" href="index.php">
+                <img class="logo" src="https://cdn.discordapp.com/attachments/581190740479311893/1198765338460962836/Asset_2.png?ex=65c01838&is=65ada338&hm=b3b142e452fc2c2b58df27d2a781bf6303e7911b8abaa6c58603a73084cbd125&" alt="">
+            </a>            <div>
+            <a href="index.php">Home</a>
+            <?php
+            if (isset($_SESSION['user'])) {
+                echo '<a href="recept_toevoegen.php">Recept Toevoegen</a>';
+                echo '<a href="logout.php">Uitloggen</a>';
+            } else {
+                echo '<a href="login.php">Login</a>';
+            }
+            ?>
+            <a href="recepten.php">Recepten</a>
+            <a href="boeken.php">Boeken</a>
+            <a href="contact.php">Contact</a>
+            </div>
+        </nav>
+    </header>
     <div class="login-container">
         <h2>Account Aanmaken</h2>
         <?php if (isset($feedback)) echo "<p>$feedback</p>"; ?>

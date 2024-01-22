@@ -14,7 +14,9 @@ include 'config.php';
 <body>
     <header>
         <nav>
-            <img class="logo" src="https://cdn.discordapp.com/attachments/581190740479311893/1198765338460962836/Asset_2.png?ex=65c01838&is=65ada338&hm=b3b142e452fc2c2b58df27d2a781bf6303e7911b8abaa6c58603a73084cbd125&" alt="">
+            <a class="logolink" href="index.php">
+                <img class="logo" src="https://cdn.discordapp.com/attachments/581190740479311893/1198765338460962836/Asset_2.png?ex=65c01838&is=65ada338&hm=b3b142e452fc2c2b58df27d2a781bf6303e7911b8abaa6c58603a73084cbd125&" alt="">
+            </a>
             <div>
             <a href="index.php">Home</a>
             <?php
@@ -35,16 +37,16 @@ include 'config.php';
 <h1>Boekenwinkel</h1>
 <br>
 <div id="book-list">
-    <div class="book" onclick="addToCart('Boek 1', 10)"><img width="100%" src="https://media.s-bol.com/BlX5pP66z8k/550x699.jpg" alt="">Boek 1 - €10</div>
-    <div class="book" onclick="addToCart('Boek 2', 15)"><img width="100%" src="https://media.s-bol.com/xkkkrvz7oyE3/550x782.jpg" alt="">Boek 2 - €15</div>
-    <div class="book" onclick="addToCart('Boek 3', 20)"><img width="100%" src="https://www.boekenvoordeel.be/media/catalog/product/cache/3/image/400x518.58974358974/9df78eab33525d08d6e5fb8d27136e95/4/6/463264_1.png" alt="">Boek 3 - €20</div>
+    <div class="book" onclick="addToCart('Boek 1', 10)"><img width="100%" src="https://media.s-bol.com/mBDn0DgV6PO/550x692.jpg" alt="">Boek 1 - €10</div>
+    <div class="book" onclick="addToCart('Boek 2', 15)"><img width="100%" src="https://164.wpcdnnode.com/greeneggtotaal.nl/wp-content/uploads/2021/01/vega-bbq-kopie-500x500.jpg" alt="">Boek 2 - €15</div>
+    <div class="book" onclick="addToCart('Boek 3', 20)"><img width="100%" src="https://bbq-helden.nl/wp-content/uploads/black-smoke-2.jpg" alt="">Boek 3 - €20</div>
 </div>
 
 <div id="cart">
     <h2>Winkelmandje</h2>
     <ul id="cart-items"></ul>
     <p id="total">Totaal: €0</p>
-    <button onclick="checkout()">Afrekenen</button>
+    <button class="button   " onclick="checkout()">Afrekenen</button>
 </div>
 
 <script>
@@ -68,10 +70,15 @@ include 'config.php';
         cartList.innerHTML = "";
         cartItems.forEach((item, index) => {
             const li = document.createElement("li");
-            li.textContent = `${item.title} - €${item.price}`;
+            li.textContent = `${item.title} - €${item.price}  `;
+        
             const removeButton = document.createElement("button");
             removeButton.textContent = "Verwijderen";
+            removeButton.classList.add("button");
             removeButton.onclick = () => removeFromCart(index);
+            document.body.appendChild(removeButton);
+            document.body.appendChild(document.createElement("br","br","br"));
+
             li.appendChild(removeButton);
             cartList.appendChild(li);
 

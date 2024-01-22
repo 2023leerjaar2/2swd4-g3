@@ -16,8 +16,9 @@ include 'config.php';
     
     <header>
         <nav>
-            <img class="logo" src="https://cdn.discordapp.com/attachments/581190740479311893/1198765338460962836/Asset_2.png?ex=65c01838&is=65ada338&hm=b3b142e452fc2c2b58df27d2a781bf6303e7911b8abaa6c58603a73084cbd125&" alt="">
-            <div>
+        <a class="logolink" href="index.php">
+                <img class="logo" src="https://cdn.discordapp.com/attachments/581190740479311893/1198765338460962836/Asset_2.png?ex=65c01838&is=65ada338&hm=b3b142e452fc2c2b58df27d2a781bf6303e7911b8abaa6c58603a73084cbd125&" alt="">
+            </a>            <div>
             <a href="index.php">Home</a>
             <?php
             if (isset($_SESSION['user'])) {

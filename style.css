@@ -12,7 +12,9 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
 }
-
+.logolink:hover{
+    background-color: white;
+}
 header {
     background-color: #ffffff;
     color: white;
@@ -50,6 +52,7 @@ header nav a {
 header nav a:hover {
     background-color: rgb(34, 34, 34);
     color: #d4af37;
+    border-radius: 8px;
 }
 /* footer styling */
 footer {
