@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute();
     $stmt->close();
 
-    // Voeg hier eventueel verdere logica toe, zoals het doorsturen naar de inlogpagina
 }
 ?>
 
@@ -36,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Account Aanmaken</button>
         </form>
 
-        <!-- Terugknop naar de homepage -->
         <a href="index.php" class="back-link">Terug naar de homepage</a>
     </div>
 </body>
