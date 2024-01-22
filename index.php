@@ -46,12 +46,12 @@ include 'config.php';
         if (mysqli_num_rows($result) > 0) {
             // Loop door de resultaten en toon ze op de pagina
             while ($row = mysqli_fetch_assoc($result)) {
-                echo '<div class="recepten">';
+                echo '<div class="recept">';
                 echo '<h2>' . $row['titel'] . '</h2>';
                 echo '<p>' . $row['tekst'] . '</p>';
                 
                 if (!empty($row['foto'])) {
-                    echo '<img class="imgrecept" src="' . $row['foto'] . '" alt="Receptfoto">';
+                    echo '<img src="' . $row['foto'] . '" alt="Receptfoto">';
                 }
                 echo '<p>' . $row['recept'] . '</p>';
                 // Controleer of er een foto is en toon deze indien beschikbaar

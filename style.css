@@ -209,7 +209,7 @@ button:hover {
 .tekst{
     height: 50px;
 }
-.recept{
+#recept{
     height: 200px;
 }
 #bericht{
@@ -217,4 +217,4 @@ button:hover {
 }
 .imgrecept{
    width: 100%; 
-}
+} 

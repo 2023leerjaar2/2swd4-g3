@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <textarea class="tekst" name="tekst" required></textarea>
 
             <label for="recept">Recept:</label>
-            <textarea class="recept" name="recept" required></textarea>
+            <textarea id="recept" name="recept" required></textarea>
 
             <label for="foto">Foto (URL):</label>
             <input type="text" name="foto" required>
