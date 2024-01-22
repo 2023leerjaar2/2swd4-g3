@@ -31,11 +31,11 @@ include 'config.php';
     </header>
 <section class="content">
 <h1>Boekenwinkel</h1>
-
+<br>
 <div id="book-list">
-    <div class="book" onclick="addToCart('Boek 1', 10)">Boek 1 - €10</div>
-    <div class="book" onclick="addToCart('Boek 2', 15)">Boek 2 - €15</div>
-    <div class="book" onclick="addToCart('Boek 3', 20)">Boek 3 - €20</div>
+    <div class="book" onclick="addToCart('Boek 1', 10)"><img width="100%" src="https://media.s-bol.com/BlX5pP66z8k/550x699.jpg" alt="">Boek 1 - €10</div>
+    <div class="book" onclick="addToCart('Boek 2', 15)"><img width="100%" src="https://media.s-bol.com/xkkkrvz7oyE3/550x782.jpg" alt="">Boek 2 - €15</div>
+    <div class="book" onclick="addToCart('Boek 3', 20)"><img width="100%" src="https://www.boekenvoordeel.be/media/catalog/product/cache/3/image/400x518.58974358974/9df78eab33525d08d6e5fb8d27136e95/4/6/463264_1.png" alt="">Boek 3 - €20</div>
 </div>
 
 <div id="cart">
