@@ -7,7 +7,7 @@ if (!isset($_SESSION['user'])) {
 }
 
 if ($_SESSION['user'] !== 'admin' && $_SESSION['user'] !== 'chef') {
-    header('Location: index.php'); // Redirect to homepage if not admin or chef
+    header('Location: index.php'); 
     exit();
 }
 

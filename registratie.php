@@ -7,7 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Check if the user exists in the database
     $stmt = $conn->prepare("SELECT * FROM gebruikers WHERE gebruikersnaam = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -15,9 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($result && password_verify($password, $result['wachtwoord'])) {
         $_SESSION['user'] = $username;
-        $_SESSION['role'] = $result['role']; // Assuming 'role' is the column storing user roles
+        $_SESSION['role'] = $result['role'];
 
-        // Redirect to the home page
         header('Location: index.php');
         exit();
     } else {
@@ -25,17 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<!-- Rest of your HTML code -->
 
 <?php
-// Role-based access control example
 if (isset($_SESSION['user'])) {
     $allowedRoles = ['admin', 'chef'];
-    
-    // Check if the logged-in user has the right role
+   
     if (in_array($_SESSION['role'], $allowedRoles)) {
-        // User has the right role, grant access to special features
-        // For example: display a link to add recipes
         echo '<a href="recept_toevoegen.php">Recept Toevoegen</a>';
     }
 }
@@ -81,7 +74,7 @@ if (isset($_SESSION['user'])) {
             <label for="new-password">Nieuw Wachtwoord:</label>
             <input type="password" name="new-password" required>
 
-            <button type="submit">Account Aanmaken</button>
+            <button class="button" type="submit">Account Aanmaken</button>
         </form>
 
         <a href="index.php" class="back-link">Terug naar de homepage</a>

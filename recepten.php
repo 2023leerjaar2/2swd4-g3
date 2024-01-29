@@ -54,9 +54,15 @@ include 'config.php';
                 echo '<p>', 'ingredïenten', '<br><br>' . $row['recept'] . '</p>';
                 
             if (isset($_SESSION['user']) && ($_SESSION['user'] == 'admin' || $_SESSION['user'] == 'chef')) {
-                    echo '<form method="post" action="delete_recipe.php">'; // Adjust action accordingly
+                    echo '<form method="post" action="delete_recipe.php">'; 
                     echo '<input type="hidden" name="recipe_id" value="' . $row['id'] . '">';
-                    echo '<button class="button" type="submit">Verwijder</button>';
+                    echo '<button class="button" id="knop33" type="submit">Verwijder</button> ';
+                    echo '</form>';
+                }
+                if (isset($_SESSION['user']) && ($_SESSION['user'] == 'admin' || $_SESSION['user'] == 'chef')) {
+                    echo '<form method="get" action="wijzigen.php">';
+                    echo '<input type="hidden" name="recipe_id" value="' . $row['id'] . '">';
+                    echo '<button class="button" type="submit">Bewerken</button>';
                     echo '</form>';
                 }
                 
