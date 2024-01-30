@@ -1,28 +1,23 @@
 <?php
 session_start();
-
 include 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $newUsername = $_POST['new-username'];
+    $newPassword = $_POST['new-password'];
 
-    $stmt = $conn->prepare("SELECT * FROM gebruikers WHERE gebruikersnaam = ?");
-    $stmt->bind_param("s", $username);
+    $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT); // Hash the password
+
+    $stmt = $conn->prepare("INSERT INTO gebruikers (gebruikersnaam, wachtwoord) VALUES (?, ?)");
+    $stmt->bind_param("ss", $newUsername, $hashedPassword);
     $stmt->execute();
-    $result = $stmt->get_result()->fetch_assoc();
+    $stmt->close();
 
-    if ($result && password_verify($password, $result['wachtwoord'])) {
-        $_SESSION['user'] = $username;
-        $_SESSION['role'] = $result['role'];
-
-        header('Location: index.php');
-        exit();
-    } else {
-        $error = "Invalid username or password.";
-    }
+    // Provide feedback to the user
+    $feedback = "Account created successfully.";
 }
 ?>
+
 
 <?php
 if (isset($_SESSION['user'])) {
