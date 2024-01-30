@@ -104,9 +104,9 @@ include 'config.php';
             }
             ?> </p>
         <div class="social-icons">
-            <a href="#"><img src="img/facebook-icon.png" alt="Facebook"></a>
-            <a href="#"><img src="img/twitter-icon.png" alt="Twitter"></a>
-            <a href="#"><img src="img/instagram-icon.png" alt="Instagram"></a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="img/facebook-icon.png" alt="Facebook"></a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="img/twitter-icon.png" alt="Twitter"></a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="img/instagram-icon.png" alt="Instagram"></a>
         </div>
         <p>&copy; <?php echo date("Y"); ?> Kamadoing. Alle rechten voorbehouden.</p>
     </footer>
